@@ -70,24 +70,17 @@ return {
   end,
   },
 
+  { "bluz71/vim-moonfly-colors",
+  name = "moonfly",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd [[colorscheme moonfly]]
+    vim.g.moonflyTerminalColors = false
+    vim.g.moonflyTransparent = true
+  end,
 
-  {
-    "folke/tokyonight.nvim",
-    lazy = false, -- загружать сразу
-    priority = 1000, -- загружать раньше других
-    config = function()
-      require("tokyonight").setup({
-        style = "night", -- или "storm" для ещё более тёмного
-        transparent = true, -- ✅ Включить прозрачность фона!
-        terminal_colors = true,
-        styles = {
-          sidebars = "transparent",
-          floats = "transparent",
-        },
-      })
 
-      vim.cmd("colorscheme tokyonight")
-    end,
   },
 
   -- Файловое дерево
